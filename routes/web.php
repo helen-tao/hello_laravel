@@ -1,7 +1,7 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\MySampleResourceController;
+//use Illuminate\Support\Facades\Route;
+//use App\Http\Controllers\MySampleResourceController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,4 +14,4 @@ use App\Http\Controllers\MySampleResourceController;
 |
 */
 
-Route::get('test', 'App\Http\Controllers\MySampleResourceController@index');
+ECHO "TEST";
