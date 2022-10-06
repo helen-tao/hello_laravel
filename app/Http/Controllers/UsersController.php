@@ -11,6 +11,7 @@ class UsersController extends Controller
 {
     public function show(User $user)
     {
+        //dd($user->avatar);
         return view('users.show', compact('user'));
     }
 
