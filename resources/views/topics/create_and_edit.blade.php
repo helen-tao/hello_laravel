@@ -34,7 +34,7 @@
           </div>
 
           <div class="mb-3">
-            <select class="form-control" name="category_id" required>
+           <select class="form-control" name="category_id" required>
               <option value="" hidden disabled selected>请选择分类</option>
               @foreach ($categories as $value)
                 <option value="{{ $value->id }}">{{ $value->name }}</option>
