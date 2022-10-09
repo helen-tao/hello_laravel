@@ -63,8 +63,18 @@ body {
   }
 }
 
+/* User register page */
+.register-page {
+  img.captcha {
+    cursor: pointer;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    padding: 3px;
+  }
+}
+
 /* Topic Index Page */
-.topics-index-page, .categories-show-page {
+.topics-index-page, .categories-show-page, .root-page {
   .topic-list {
     .nav>li>a {
       position: relative;
@@ -109,6 +119,7 @@ body {
   max-width:100%;
 }
 
+
 /* Topic Show Page */
 
 @import "topic_body";
@@ -126,6 +137,7 @@ body {
     }
 }
 
+/* 回复列表 */
 .topic-reply {
   a {
       color: inherit;
