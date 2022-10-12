@@ -13,6 +13,7 @@
         "laravel/horizon": "~5.9",
         "laravel/sanctum": "^2.11",
         "laravel/tinker": "^2.5",
+        "mews/captcha": "~3.0",
         "mews/purifier": "~3.3",
         "overtrue/laravel-lang": "~5.0",
         "overtrue/pinyin": "~4.0",
