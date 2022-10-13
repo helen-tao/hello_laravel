@@ -20,6 +20,7 @@ class User extends Authenticatable implements MustVerifyEmail
     }
     use HasRoles;
     use Traits\ActiveUserHelper;
+    use Traits\LastActivedAtHelper;
 
     /**
      * The attributes that are mass assignable.
