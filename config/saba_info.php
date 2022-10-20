@@ -1,6 +1,7 @@
 <?php
 
-//$a='1';
+//use https://t.yctin.com/en/excel/to-php-array/
+//convert excel to array
 return [
     'img_link'=> array(
         'banner_image'=>'https://unitingcaresb-fads.sabacloud.com/Saba/Web/A501SNB0005/Image/r8SO7N7_pTKtWkUOEPyD8xZncp5nLtVz?file=super%20genie.png_3fd4ee7a-f8b0-4b49-8c31-c780bd80c5cb_1648531132252.png',
