@@ -4,7 +4,7 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>{{ $page_title }}</title>
+<title>Saba Help {{$final_info['page_title']}}</title>
 <style type="text/css">
 @charset "utf-8";
 body {
@@ -19,21 +19,22 @@ body {
 }
 .sshelp-banner {
     padding: 24px;
-    background-color: #{{$background_color}};
+    background-color: #{{$page_color['background_color']}};
 }
 .sshelp-banner-title {
+    margin-top: 20px;
     display: inline-block;
     vertical-align: middle;
     text-align: left;
     width: 50%;
-    color: #{{$banner_title_color}};
+    color: #{{$page_color['banner_title_color']}};
     font-weight: bolder;
-    font-size: 48px;
+    font-size: 40px;
 }
 .sshelp-banner-subtitle {
-    margin-top: 30px;
+    margin-top: 10px;
     color: #000;
-    font-size: 24px;
+    font-size: 28px;
     font-weight: bolder;
 }
 .sshelp-banner img {
@@ -41,7 +42,7 @@ body {
     margin-left: 50px;
 }
 .sshelp-container {
-    width: 80%;
+    width: 95%;
     margin-left: auto;
     margin-right: auto;
 }
@@ -55,7 +56,7 @@ body {
     flex-wrap: wrap;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 50px;
+    margin-bottom: 80px;
     margin-top: 30px;
 }
 .sshelp-nav {
@@ -68,30 +69,28 @@ body {
     height: 65px;
 }
 .sshelp-banner-subtitle a, .sshelp-nav a {
-    width: 170px;
+    width: 250px;
     display: block;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 0.5em;
+    margin-bottom: 1em;
+    padding: 1em;
     text-align: center;
     color: #ffffff;
-    padding: 0.5em;
     text-decoration: none;
     border-radius: 30px;
-    background: #619EAC;
+    background: #{{$page_color['button_color']}};
 }
 .sshelp-banner-subtitle a {
-    display: inline-block;
-    width: 350px;
     font-size: 18px;
     margin-left: 10px;
 }
 .sshelp-banner-subtitle a:hover, .sshelp-nav a:hover {
-    background: #A5BECE;
+    background: #{{$page_color['hover_color']}};
 }
 .sshelp-foot {
     color: #333;
-    background-color: #{{$background_color}};
+    background-color: #{{$page_color['background_color']}};
     height: 50px;
     line-height: 50px;
 }
@@ -112,19 +111,21 @@ body {
 
 <body>
 <div class="sshelp-banner">
-  <div class="sshelp-banner-title">{{$banner_title}}
-    <div class="sshelp-banner-subtitle"> <a href="#Residentia">Click here to enrol</a> <a href="#Residentia">Basic Functions Instruction</a></div>
+  <div class="sshelp-banner-title">{{$final_info['page_title']}} Staff<br/>
+    New Starter Experience
+    <div class="sshelp-banner-subtitle">First 90 Day Roadmap<p/>
+    <a href="{{$image_links['roadmap_link']}}" target="popup">View Roadmap</a></div>
   </div>
-  <img src="https://unitingcaresb.sabacloud.com/production/A501SNB0005/CertificateTemplates/crttp000000000001540/local000000000000008/images/learner-header-image.png?v=628324" alt="" width="271" height="" /></div>
+  <img src="{{$image_links['banner_image']}}" alt="" width="402" height="330" /></div>
 <div class="sshelp-container">
-  <div class="container-title">{{$content_title}}</div>
+  <div class="container-title">{{$final_info['page_title']}} Staff Learning Requirements</div>
   <div class="sub-container">
-    @foreach ($contents as $content)
+    @foreach ($final_info['contents'] as $name => $button_arr)
     <div class="sshelp-nav">
-      <img src="{{$content['nav_image']}}" alt="" width="200" height="" />
-      <h3>{{$content['nav_title']}}</h3>
-      @foreach ($content['nav_button'] as $button_name => $button_link)
-      <a href="{{$button_link}}">{{$button_name}}</a>
+      <img src="{{$image_links[$name]}}" alt="" width="200" height="" />
+      <h3>{{$name}}</h3>
+      @foreach ($button_arr as $button_name)
+      <a href="#">{{$button_name}}</a>
       @endforeach
     </div>
     @endforeach

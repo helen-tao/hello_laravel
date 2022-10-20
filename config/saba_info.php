@@ -5,28 +5,19 @@ return [
     'img_link'=> array(
         'banner_image'=>'https://unitingcaresb-fads.sabacloud.com/Saba/Web/A501SNB0005/Image/r8SO7N7_pTKtWkUOEPyD8xZncp5nLtVz?file=super%20genie.png_3fd4ee7a-f8b0-4b49-8c31-c780bd80c5cb_1648531132252.png',
         'roadmap_link'=>'https://unitingcaresb-fads.sabacloud.com/Saba/Web/A501SNB0005/Image/r8SO7N7_pTKtWkUOEPyD8xZncp5nLtVz?file=First-90-days-Roadmap.jpg_f32edb6e-138b-415d-9e58-ea304d04fa09_1648520322889.jpg',
-        'orientation'=>'https://unitingcaresb-fads.sabacloud.com/Saba/Web/A501SNB0005/Image/r8SO7N7_pTKtWkUOEPyD8xZncp5nLtVz?file=icon-orientation.png_14f8b667-2809-4b11-8db0-9d373e830436_1648697167812.png',
-        'week1'=>'https://unitingcaresb-fads.sabacloud.com/Saba/Web/A501SNB0005/Image/r8SO7N7_pTKtWkUOEPyD8xZncp5nLtVz?file=icon-week1.png_76e7e56f-4428-4113-91bf-5828840e39e4_1648697189809.png',
-        'month1'=>'https://unitingcaresb-fads.sabacloud.com/Saba/Web/A501SNB0005/Image/r8SO7N7_pTKtWkUOEPyD8xZncp5nLtVz?file=icon-mon1.png_5928e181-ec45-4a90-bd2b-810d52b2c209_1648697204483.png',
-        'month3'=>'https://unitingcaresb-fads.sabacloud.com/Saba/Web/A501SNB0005/Image/r8SO7N7_pTKtWkUOEPyD8xZncp5nLtVz?file=icon-mon2.png_44a281e9-d30e-4799-a66d-881f4543b07f_1648697233699.png',
-        'month6'=>'https://unitingcaresb-fads.sabacloud.com/Saba/Web/A501SNB0005/Image/r8SO7N7_pTKtWkUOEPyD8xZncp5nLtVz?file=icon-mon3.png_0a697edc-db28-423f-904c-52280d3c9e0e_1648697311880.png',
-        'taskbased'=>'https://unitingcaresb-fads.sabacloud.com/Saba/Web/A501SNB0005/Image/r8SO7N7_pTKtWkUOEPyD8xZncp5nLtVz?file=icon-task.png_fe399c81-3493-4568-b4be-e9a5acf1f482_1648698376620.png',
+        'Orientation'=>'https://unitingcaresb-fads.sabacloud.com/Saba/Web/A501SNB0005/Image/r8SO7N7_pTKtWkUOEPyD8xZncp5nLtVz?file=icon-orientation.png_14f8b667-2809-4b11-8db0-9d373e830436_1648697167812.png',
+        'Week 1'=>'https://unitingcaresb-fads.sabacloud.com/Saba/Web/A501SNB0005/Image/r8SO7N7_pTKtWkUOEPyD8xZncp5nLtVz?file=icon-week1.png_76e7e56f-4428-4113-91bf-5828840e39e4_1648697189809.png',
+        'Month 1'=>'https://unitingcaresb-fads.sabacloud.com/Saba/Web/A501SNB0005/Image/r8SO7N7_pTKtWkUOEPyD8xZncp5nLtVz?file=icon-mon1.png_5928e181-ec45-4a90-bd2b-810d52b2c209_1648697204483.png',
+        'Month 3'=>'https://unitingcaresb-fads.sabacloud.com/Saba/Web/A501SNB0005/Image/r8SO7N7_pTKtWkUOEPyD8xZncp5nLtVz?file=icon-mon2.png_44a281e9-d30e-4799-a66d-881f4543b07f_1648697233699.png',
+        'Month 6'=>'https://unitingcaresb-fads.sabacloud.com/Saba/Web/A501SNB0005/Image/r8SO7N7_pTKtWkUOEPyD8xZncp5nLtVz?file=icon-mon3.png_0a697edc-db28-423f-904c-52280d3c9e0e_1648697311880.png',
+        'Task Based'=>'https://unitingcaresb-fads.sabacloud.com/Saba/Web/A501SNB0005/Image/r8SO7N7_pTKtWkUOEPyD8xZncp5nLtVz?file=icon-task.png_fe399c81-3493-4568-b4be-e9a5acf1f482_1648698376620.png',
     ),
 
-    'sub_title' => array(
-        'orientation'=> 'Orientation',
-        'week1'=>'Week 1 Training',
-        'month1'=>'Month1 Training',
-        'month3'=>'Month3 Training',
-        'month6'=>'Month6 Training',
-        'taskbased'=>'Task Related',
-    ),
-
-    'page_info'=>array(
-        'background_color' => 'C4DCDF',
-        'banner_title_color' => '619EAC',
-        'button_color' => '619EAC',
-        'hover_color' => 'A5BECE',
+    'page_color'=>array(
+        'background_color' => 'CBB0CF',
+        'banner_title_color' => '734c74',
+        'button_color' => '734c74',
+        'hover_color' => 'ad90b2',
     ),
 
     'content_info' => array(

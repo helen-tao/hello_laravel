@@ -33,31 +33,54 @@ class BatchPages extends Command
         $info_array=config('saba_info');
 
         $image_links=$info_array['img_link'];
+        $page_color=$info_array['page_color'];
         $content_info=$info_array['content_info'];
 
-       // dd($content_info);
-
-        $page_info=array();
+        //get pages name
         $page_title=array();
-        $final_info=array();
         $page_title=array_keys(array_slice($content_info[0],2));
-        //dd($page_title);
+
+        //make every page
         foreach($page_title as $page_value){
-            $final_info[]['page_title']=$page_value;
 
-
+            $page_array=array(
+                'Orientation'=>array(),
+                'Month 1'=>array(),
+                'Month 3'=>array(),
+                'Month 6'=>array(),
+                'Task Based'=>array(),
+            );
             foreach($content_info as $content_value){
                 if($content_value[$page_value]=='ü'){
-                    print_r($content_value);
-                }
-           // $page_info['page_title']=$value
-            }
-            exit;
 
+                    array_push($page_array[$content_value['Timeframe']],$content_value['Course name']);
+                    //print_r($content_value['Timeframe']);
+                }
+
+            }
+
+            $final_info=array();
+            $final_info=array(
+                'page_title'=>$page_value,
+                'contents'=>$page_array,
+            );
+
+            // print_r($final_info);
+            // print_r($page_color);
+            // print_r($image_links);
+
+            $content=view('saba.default',compact('final_info','image_links','page_color'));
+            $file_name='Disability_Service_'.$page_value.'.html';
+            //echo $content;exit;
+            if(Storage::put('test/'.$file_name, $content)){
+                $this->info( $file_name." file is suc<p>");
+            }else{
+                $this->info( $file_name." file is fail<p>");
+            }
 
 
         }
-        dd($final_info);
+        //dd($final_info);
 
 
         // foreach ($info_array as $key => $value) {
