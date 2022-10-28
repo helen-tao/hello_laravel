@@ -41,4 +41,10 @@ Route::resource('replies', 'RepliesController', ['only' => ['store', 'destroy']]
 
 Route::resource('notifications', 'NotificationsController', ['only' => ['index']]);
 
+<<<<<<< HEAD
 Route::get('permission-denied', 'PagesController@permissionDenied')->name('permission-denied');
+=======
+
+//uniting care test
+Route::get('saba', 'SabaController@make')->name('saba');
+>>>>>>> saba
