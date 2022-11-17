@@ -30,74 +30,85 @@ class BatchPages extends Command
     {
         $this->info("start to make page...");
 
-        $info_array=config('saba_info');
+        $info_array=config('saba_info_1115');
 
         $image_links=$info_array['img_link'];
-        $page_color=$info_array['page_color'];
-        $content_info=$info_array['content_info'];
+        $page_info=$info_array['page_info'];
+        $button_info=$info_array['button_info'];
 
-        //get pages name
-        $page_title=array();
-        $page_title=array_keys(array_slice($content_info[0],2));
 
-        //make every page
-        foreach($page_title as $page_value){
-
-            $page_array=array(
-                'Orientation'=>array(),
-                'Month 1'=>array(),
-                'Month 3'=>array(),
-                'Month 6'=>array(),
-                'Task Based'=>array(),
-            );
-            foreach($content_info as $content_value){
-                if($content_value[$page_value]=='ü'){
-
-                    array_push($page_array[$content_value['Timeframe']],$content_value['Course name']);
-                    //print_r($content_value['Timeframe']);
-                }
-
-            }
-
-            $final_info=array();
-            $final_info=array(
-                'page_title'=>$page_value,
-                'contents'=>$page_array,
-            );
-
-            // print_r($final_info);
-            // print_r($page_color);
-            // print_r($image_links);
-
-            $content=view('saba.default',compact('final_info','image_links','page_color'));
-            $file_name='Disability_Service_'.$page_value.'.html';
-            //echo $content;exit;
-            if(Storage::put('test/'.$file_name, $content)){
-                $this->info( $file_name." file is suc<p>");
+        $page_count=count($page_info[0]);
+        $banner_arr=array();
+        for($i=0,$m=0;$i<$page_count;$i++){
+            if($page_info[0][$i]){
+                $banner_arr[$page_info[0][$i]][]=array(
+                    "page_id"=>$page_info[2][$i],
+                    "page_catagory"=>$page_info[0][$i],
+                    "page_name"=>$page_info[0][$i]."_".$page_info[3][$i],
+                    "page_title"=>$page_info[3][$i],
+                    "page_link"=>$page_info[1][$i],
+                );
+                $m=$i;
             }else{
-                $this->info( $file_name." file is fail<p>");
+                $banner_arr[$page_info[0][$m]][]=array(
+                    "page_id"=>$page_info[2][$i],
+                    "page_catagory"=>$page_info[0][$m],
+                    "page_name"=>$page_info[0][$m]."_".$page_info[3][$i],
+                    "page_title"=>$page_info[3][$i],
+                    "page_link"=>$page_info[1][$i],
+                );
             }
+        }
+        //dd($banner_arr);
 
+        $button_count=count($button_info);
+        $page_count=count($button_info[0]);
+        $button_arr=array();
+
+        for($j=3;$j<$page_count;$j++){
+            $button_arr[$button_info[0][$j]]=array(
+                'Orientation'=>array(),
+                'Week 1 Training'=>array(),
+                'Month 1 Training'=>array(),
+                'Month 3 Training'=>array(),
+                'Month 6 Training'=>array(),
+                'Task Related'=>array(),
+            );
+
+            for($i=1;$i<$button_count;$i++){
+                if($button_info[$i][$j]=='✓'){
+                    $button_arr[$button_info[0][$j]][$button_info[$i][1]][]=array(
+                        "button_name"=>$button_info[$i][0],
+                        "button_link"=>$button_info[$i][2]
+                    );
+                }
+            }
+        }
+        //dd($button_arr[1]);
+
+        foreach($banner_arr as $banner_name => $banner_value){
+            //print_r($banner_value);exit;
+            for($n=0;$n<count($banner_value);$n++){
+                $page_value_index=$n;
+                $button_value=$button_arr[$banner_value[$n]['page_id']];
+
+                //print_r($banner_value);
+                //print_r($image_links);
+                //print_r($button_value);
+                //print_r($page_value_index);
+
+                $content=view('saba.default2',compact('banner_value','image_links','button_value','page_value_index'));
+                $file_name=$banner_value[$n]['page_id']."_".$banner_value[$n]['page_name'].".html";
+                //echo $banner_name;exit;
+                if(Storage::put("test/".$banner_name."/".$file_name, $content)){
+                    $this->info( $file_name." file is suc<p>");
+                }else{
+                    $this->info( $file_name." file is fail<p>");
+                }
+                //exit;
+            }
 
         }
         //dd($final_info);
-
-
-        // foreach ($info_array as $key => $value) {
-        //     $info = array();
-        //     $info['file_name'] = $key.".html";
-        //     //dd(storage_path());
-        //     $content=view('saba.default',$value);
-        //     //echo $content;
-        //     if(Storage::put("test/".$info['file_name'], $content)){
-        //         $this->info( $info['file_name']." file is suc<p>");
-        //     }else{
-        //         $this->info( $info['file_name']." file is fail<p>");
-        //     }
-        //     //echo $content;
-        // };
-
-        // $this->info("all suc");
-
     }
 }
