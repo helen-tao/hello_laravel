@@ -34,6 +34,7 @@ h1 img {
     padding-top: 1em 5em 5em 5em;
 }
 .sshero_banner_content{
+    width: 850px;
     display: inline-block;
     vertical-align: middle;
 }
@@ -72,7 +73,7 @@ h1 img {
     width: 250px;
 }
 .sshero_banner_img{
-    margin:50px 0px 50px 400px;
+    margin:50px 0px 50px 200px;
     vertical-align: middle;
 }
 .ss_container, .ss_bottom h1{
@@ -100,6 +101,12 @@ h1 img {
 @media (max-width: 1200px) {
   .sshero-nav-bottom{
     width: 230px;
+  }
+}
+
+@media (max-width: 900px) {
+  .sshero_banner_content{
+    width: auto;
   }
 }
 </style>
